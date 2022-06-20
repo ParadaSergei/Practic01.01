@@ -8,26 +8,49 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            var startingDeck = from s in Suits()
-                               from r in Ranks()
-                               select new { Suit = s, Rank = r };
+    var startingDeck = (from s in Suits().LogQuery("Suit Generation")
+                        from r in Ranks().LogQuery("Value Generation")
+                        select new { Suit = s, Rank = r })
+                        .LogQuery("Starting Deck")
+                        .ToArray();
 
-            // Display each card that we've generated and placed in startingDeck in the console
-            foreach (var c in startingDeck)
-            {
-                Console.WriteLine(c);
-            }
+    foreach (var c in startingDeck)
+    {
+        Console.WriteLine(c);
+    }
 
-            // 52 cards in a deck, so 52 / 2 = 26
-            var top = startingDeck.Take(26);
-            var bottom = startingDeck.Skip(26);
-            var shuffle = top.InterleaveSequenceWith(bottom);
+    Console.WriteLine();
 
-            foreach (var c in shuffle)
-            {
-                Console.WriteLine(c);
-            }
+    var times = 0;
+    var shuffle = startingDeck;
+
+    do
+    {
+        /*
+        shuffle = shuffle.Take(26)
+            .LogQuery("Top Half")
+            .InterleaveSequenceWith(shuffle.Skip(26).LogQuery("Bottom Half"))
+            .LogQuery("Shuffle")
+            .ToArray();
+        */
+
+        shuffle = shuffle.Skip(26)
+            .LogQuery("Bottom Half")
+            .InterleaveSequenceWith(shuffle.Take(26).LogQuery("Top Half"))
+            .LogQuery("Shuffle")
+            .ToArray();
+
+        foreach (var c in shuffle)
+        {
+            Console.WriteLine(c);
         }
+
+        times++;
+        Console.WriteLine(times);
+    } while (!startingDeck.SequenceEquals(shuffle));
+
+    Console.WriteLine(times);
+}
         static IEnumerable<string> Suits()
         {
             yield return "clubs";
@@ -52,6 +75,7 @@ namespace LINQ
             yield return "king";
             yield return "ace";
         }
+
     }
 
 }
