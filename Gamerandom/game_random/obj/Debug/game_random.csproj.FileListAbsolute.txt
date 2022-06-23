@@ -1,0 +1,13 @@
+c:\users\юлия\documents\visual studio 2013\Projects\game_random\game_random\bin\Debug\game_random.exe.config
+c:\users\юлия\documents\visual studio 2013\Projects\game_random\game_random\bin\Debug\game_random.exe
+c:\users\юлия\documents\visual studio 2013\Projects\game_random\game_random\bin\Debug\game_random.pdb
+c:\users\юлия\documents\visual studio 2013\Projects\game_random\game_random\obj\Debug\game_random.csprojResolveAssemblyReference.cache
+c:\users\юлия\documents\visual studio 2013\Projects\game_random\game_random\obj\Debug\game_random.exe
+c:\users\юлия\documents\visual studio 2013\Projects\game_random\game_random\obj\Debug\game_random.pdb
+C:\Github\Новая папка\game_random\game_random\bin\Debug\game_random.exe.config
+C:\Github\Новая папка\game_random\game_random\bin\Debug\game_random.exe
+C:\Github\Новая папка\game_random\game_random\bin\Debug\game_random.pdb
+C:\Github\Новая папка\game_random\game_random\obj\Debug\game_random.csproj.AssemblyReference.cache
+C:\Github\Новая папка\game_random\game_random\obj\Debug\game_random.csproj.CoreCompileInputs.cache
+C:\Github\Новая папка\game_random\game_random\obj\Debug\game_random.exe
+C:\Github\Новая папка\game_random\game_random\obj\Debug\game_random.pdb
